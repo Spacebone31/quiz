@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Slider</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Container style (size, margin, only show one testimonial) */
+        .testimonial-container {
+            width: 60%;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        /* Other testimonial that is hidden */
+        .testimonial {
+            display: none;
+            text-align: center;
+        }
+        /* First testimonial */
+        .testimonial.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="testimonial-container">
+        <div class="testimonial active">
+            <p>“I recently dined at [RestaurantName] and was thoroughly impressed by both the exquisite cuisine and the 
+                impeccable service. The menu showcased a variety of innovative dishes, blending bold flavors and beautiful 
+                presentation. The attentive and knowledgeable staff ensured that our meal was a memorable one, providing 
+                excellent recommendations and ensuring our satisfaction. I can’t recommend [RestaurantName] enough for a 
+                fantastic dining experience.”</p>
+            <p>- John Doe</p>
+        </div>
+        <div class="testimonial">
+            <p>“My stay at [HotelName] was nothing short of spectacular. The hotel’s elegant design, combined with its 
+                top-notch amenities, made for a truly relaxing and enjoyable experience. The attentive and courteous staff 
+                catered to my every need, ensuring that my stay was as comfortable as possible. With its convenient 
+                location and outstanding service, [HotelName] has quickly become my go-to choice for accommodations 
+                whenever I travel to the area. 5 star!”</p>
+            <p>- Jane Smith</p>
+        </div>
+        <div class="testimonial">
+            <p>“If you’re looking for a phenomenal dining experience, look no further than [RestaurantName]. Their menu is 
+                a culinary masterpiece, offering an incredible selection of dishes that cater to diverse tastes and 
+                preferences. The atmosphere is warm and inviting, and the staff is friendly and attentive, making every 
+                visit a true pleasure. I’ve dined at [RestaurantName] several times and have never been disappointed – it’s 
+                truly a must-visit destination for any food lover.”</p>
+            <p>- anonymus</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Set interval for changing testimonials every 5 seconds
+            setInterval(changeTestimonial, 5000);
+
+            function changeTestimonial() {
+                // The testimonial keep changing taking turns
+                var activeTestimonial = $('.testimonial.active');
+                var nextTestimonial = activeTestimonial.next();
+
+                // If there is no next testimonial, go back to the first one
+                if (nextTestimonial.length === 0) {
+                    nextTestimonial = $('.testimonial:first');
+                }
+
+                // Fade out the current testimonial and fade in the next one
+                activeTestimonial.fadeOut(1000, function () {
+                    activeTestimonial.removeClass('active');
+                    nextTestimonial.fadeIn(1000).addClass('active');
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+        <title>Tabbed Widget</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+        <style>
+            body {
+                font-family: "Times New Roman", Georgia, Serif; 
+                background-color: beige;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+            }
+            .container {
+                flex: 1;
+            }
+            .footer {
+                width: 100%;
+            }
+        </style>
+        <script>
+            $(document).ready(function(){
+                $("#myTabs a").click(function(e){
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="w3-bar w3-pale-yellow">
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-home w3-xxlarge"></i></a>
+            <a href="about.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user w3-xxlarge"></i></a>
+        </div>
+
+        <header class="w3-container w3-theme w3-padding" id="myHeader">
+            <div class="w3-center">
+                <h4>HCI - Week 8 - Assignment</h4>
+                <h1 class="w3-xxxlarge w3-animate-bottom">Tabbed Widget</h1>
+            </div>
+        </header>
+
+        <div class="container mt-4">
+            <ul class="nav nav-tabs" id="myTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#newsTab">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#reviewsTab">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#commentsTab">Comments</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-2">
+                <div class="tab-pane fade show active" id="newsTab">
+                    <h3>Latest News Example</h3>
+                    <hr>
+                    <div id="newsContent"></div>
+                    <h4>OpenAI to integrate ChatGPT chatbot in classrooms</h4>
+                    <p>OpenAI is considering the integration of its widely embraced ChatGPT chatbot into educational environments, 
+                        aiming to harness transformative technology for learning purposes. Insights into this ambitious endeavour 
+                        were shared by Brad Lightcap, Chief Operating Officer at OpenAI, during the INSEAD Americas Conference. 
+                        The company plans to form a team to explore how ChatGPT can be seamlessly incorporated into educational 
+                        environments with a focus on promoting responsible AI use in learning settings. The launch of ChatGPT 
+                        initially raised concerns among the academic community about cheating and plagiarism. However, an 
+                        increasing number of educators recognised its benefits for students in just a few months, leading OpenAI 
+                        to delve deeper into its educational applications. OpenAI actively collaborates with educators, forming 
+                        partnerships with education groups such as Khan Academy and collaborating with Schmidt Futures to provide 
+                        grants to education groups in underserved communities. The company strives to inform educators about 
+                        ChatGPT’s capabilities, potential benefits, and ongoing efforts to enhance its applications in educational 
+                        settings.</p>
+                    <h4>How can AI assist in the classroom?</h4>
+                    <p>IF used responsibly, AI has the potential to optimise education by tailoring learning experiences and aiding 
+                        both students and educators in various aspects of teaching and learning. It can assist in the classroom 
+                        by personalising learning, automating teacher administrative tasks, providing adaptive learning experiences, 
+                        and offering 24/7 student support through chatbots or virtual assistants.</p>
+                    <hr>
+                </div>
+                <div class="tab-pane fade" id="reviewsTab">
+                    <h3>User Reviews Example</h3>
+                    <hr>
+                    <p>“I recently dined at [RestaurantName] and was thoroughly impressed by both the exquisite cuisine and the 
+                        impeccable service. The menu showcased a variety of innovative dishes, blending bold flavors and beautiful 
+                        presentation. The attentive and knowledgeable staff ensured that our meal was a memorable one, providing 
+                        excellent recommendations and ensuring our satisfaction. I can’t recommend [RestaurantName] enough for a 
+                        fantastic dining experience.” -John Doe</p>
+                    <p>“My stay at [HotelName] was nothing short of spectacular. The hotel’s elegant design, combined with its 
+                        top-notch amenities, made for a truly relaxing and enjoyable experience. The attentive and courteous staff 
+                        catered to my every need, ensuring that my stay was as comfortable as possible. With its convenient 
+                        location and outstanding service, [HotelName] has quickly become my go-to choice for accommodations 
+                        whenever I travel to the area. 5 star!” -Jane Smith</p>
+                    <p>“If you’re looking for a phenomenal dining experience, look no further than [RestaurantName]. Their menu is 
+                        a culinary masterpiece, offering an incredible selection of dishes that cater to diverse tastes and 
+                        preferences. The atmosphere is warm and inviting, and the staff is friendly and attentive, making every 
+                        visit a true pleasure. I’ve dined at [RestaurantName] several times and have never been disappointed – it’s 
+                        truly a must-visit destination for any food lover.” -anonymous</p>
+                    <hr>
+                </div>
+                <div class="tab-pane fade" id="commentsTab">
+                    <h3>User Comments Example</h3>
+                    <hr>
+                    <h4>Attendance</h4>
+                    <ul>
+                        <li>“You are always here on time, never leave early and adhere to all company break times.”</li>
+                        <li>“On the rare occasion that you have missed work, you have provided ample notice and made arrangements 
+                            to ensure your responsibilities are covered.”</li>
+                        <li>"You have proven to be a reliable employee by arriving each day prepared to tackle your work with a 
+                            positive attitude.”</li>
+                        <li>“You have frequently returned late from your lunch breaks, and are often late reporting to work.”</li>
+                        <li>"You have demonstrated a pattern of tardiness by consistently arriving 15 minutes later or more 
+                            for work.”</li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <footer class="w3-container w3-theme-dark w3-padding-16">
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        </footer>
+    </body>
+</html>
